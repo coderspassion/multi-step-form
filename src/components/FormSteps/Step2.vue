@@ -17,45 +17,45 @@ const {mainForm} = multiForm();
       <div class="row">
         <div class="col-md-6 mb-3">
           <label class="form-label required">First Name </label>
-          <input type="text" class="form-control" name="f_name" />
+          <input type="text" class="form-control" name="first_name" v-model="mainForm.first_name" />
         </div>
 
         <div class="col-md-6 mb-3">
           <label class="form-label required">Last Name </label>
-          <input type="text" class="form-control" name="l_name" />
+          <input type="text" class="form-control" name="last_name" v-model="mainForm.last_name" />
         </div>
 
         <div class="col-md-6 mb-3">
           <label class="form-label">Nickname </label>
-          <input type="text" class="form-control" name="n_name" />
+          <input type="text" class="form-control" name="nickname" v-model="mainForm.nickname" />
         </div>
 
         <div class="col-md-6 mb-3">
           <label class="form-label required">Date of Birth </label>
-          <input class="form-control mb-2" type="date" name="date_of_birth" />
+          <input class="form-control mb-2" type="date" name="dob" v-model="mainForm.dob"/>
         </div>
         <div class="col-md-4 mb-3">
           <label class="form-label required">Working At/Retired From </label>
-          <input type="text" class="form-control" name="working_at" />
+          <input type="text" class="form-control" name="organization" v-model="mainForm.organization" />
         </div>
         <div class="col-md-4 mb-3">
           <label class="form-label required">Current/Former Occupation </label>
-          <input type="text" class="form-control" name="occupation" />
+          <input type="text" class="form-control" name="occupation" v-model="mainForm.occupation" />
         </div>
 
         <div class="col-md-4 mb-3">
           <label class="form-label required">Retired?</label>
           <div>
             <label class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="retired" />
+              <input class="form-check-input" type="radio" name="retirement_status" value="yes" v-model="mainForm.retirement_status" />
               <span class="form-check-label">Yes</span>
             </label>
             <label class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="retired" />
+              <input class="form-check-input" type="radio" name="retirement_status" value="no" v-model="mainForm.retirement_status" />
               <span class="form-check-label">No</span>
             </label>
             <label class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="retired" />
+              <input class="form-check-input" type="radio" name="retirement_status" value="semi" v-model="mainForm.retirement_status" />
               <span class="form-check-label">Semi</span>
             </label>
           </div>
@@ -63,42 +63,42 @@ const {mainForm} = multiForm();
 
         <div class="col-md-6 mb-3">
           <label class="form-label">Primary Home Phone</label>
-          <input type="text" class="form-control" name="p_h_phone" />
+          <input type="text" class="form-control" name="primary_home_phone" v-model="mainForm.primary_home_phone"/>
         </div>
 
         <div class="col-md-6 mb-3">
           <label class="form-label">Cell#</label>
-          <input type="phone" class="form-control" name="cell" />
+          <input type="phone" class="form-control" name="cell" v-model="mainForm.cell"/>
         </div>
 
         <div class="col-md-6 mb-3">
           <label class="form-label">Email</label>
-          <input type="email" class="form-control" name="email" />
+          <input type="email" class="form-control" name="email" v-model="mainForm.email" />
         </div>
 
         <div class="col-md-6 mb-3">
           <label class="form-label required">Primary Address</label>
-          <input type="text" class="form-control" name="p_address" />
+          <input type="text" class="form-control" name="primary_address" v-model="mainForm.primary_address"/>
         </div>
 
         <div class="col-md-6 mb-3">
           <label class="form-label">City</label>
-          <input type="text" class="form-control" name="city" />
+          <input type="text" class="form-control" name="city" v-model="mainForm.city" />
         </div>
 
         <div class="col-md-6 mb-3">
           <label class="form-label">State</label>
-          <input type="text" class="form-control" name="state" />
+          <input type="text" class="form-control" name="state" v-model="mainForm.state" />
         </div>
 
         <div class="col-md-6 mb-3">
           <label class="form-label">Zip</label>
-          <input type="text" class="form-control" name="zip" />
+          <input type="text" class="form-control" name="zip"  v-model="mainForm.zip" />
         </div>
 
         <div class="col-md-6 mb-3">
           <label class="form-label">Country</label>
-          <input type="text" class="form-control" name="country" />
+          <input type="text" class="form-control" name="country" v-model="mainForm.country" />
         </div>
 
         <div class="col-md-12 mb-3">
@@ -134,12 +134,12 @@ const {mainForm} = multiForm();
           <div class="row">
             <div class="col-md-4 mb-3">
             <label class="form-label">Spouse Name</label>
-            <input type="text" class="form-control" name="spouse_name" />
+            <input type="text" class="form-control" name="spouse_name" v-model="mainForm.spouse_name"/>
           </div>
 
           <div class="col-md-4 mb-3">
             <label class="form-label">Nickname</label>
-            <input type="text" class="form-control" name="spouse_nickname" />
+            <input type="text" class="form-control" name="spouse_nickname" v-model="mainForm.spouse_nickname" />
           </div>
 
           <div class="col-md-4 mb-3">
@@ -147,17 +147,18 @@ const {mainForm} = multiForm();
             <input
               class="form-control mb-2"
               type="date"
-              name="spouse_date_of_birth"
+              name="spouse_dob"
+              v-model="mainForm.spouse_dob"
             />
           </div>
 
           <div class="col-md-4 mb-3">
             <label class="form-label">Working At/Retired From </label>
-            <input type="text" class="form-control" name="spouse_working_at" />
+            <input type="text" class="form-control" name="spouse_working_at" v-model="mainForm.spouse_organization"/>
           </div>
           <div class="col-md-4 mb-3">
             <label class="form-label">Current/Former Occupation </label>
-            <input type="text" class="form-control" name="spouse_occupation" />
+            <input type="text" class="form-control" name="spouse_occupation" v-model="mainForm.spouse_occupation" />
           </div>
 
           <div class="col-md-4 mb-3">
@@ -167,7 +168,9 @@ const {mainForm} = multiForm();
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="spouse_retired"
+                  name="spouse_retirement_status"
+                  value="yes"
+                  v-model="mainForm.spouse_retirement_status"
                 />
                 <span class="form-check-label">Yes</span>
               </label>
@@ -175,7 +178,9 @@ const {mainForm} = multiForm();
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="spouse_retired"
+                  value="no"
+                  name="spouse_retirement_status"
+                  v-model="mainForm.spouse_retirement_status"
                 />
                 <span class="form-check-label">No</span>
               </label>
@@ -183,7 +188,9 @@ const {mainForm} = multiForm();
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="spouse_retired"
+                  name="spouse_retirement_status"
+                  value="semi"
+                  v-model="mainForm.spouse_retirement_status"
                 />
                 <span class="form-check-label">Semi</span>
               </label>
@@ -192,12 +199,12 @@ const {mainForm} = multiForm();
 
           <div class="col-md-6 mb-3">
             <label class="form-label">Cell# (Spouse)</label>
-            <input type="text" class="form-control" name="spouse_cell" />
+            <input type="text" class="form-control" name="spouse_cell" v-model="mainForm.spouse_cell" />
           </div>
 
           <div class="col-md-6 mb-3">
             <label class="form-label">Email (Spouse)</label>
-            <input type="email" class="form-control" name="spouse_email" />
+            <input type="email" class="form-control" name="spouse_email" v-model="mainForm.spouse_email" />
           </div>
           </div>
         </div>
