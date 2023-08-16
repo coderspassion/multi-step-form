@@ -93,7 +93,7 @@ const prevStep = () => {
                 role="tabpanel"
                 aria-labelledby="step-3-tab"
               >
-                <Step3/>
+                <Step3 @nextStep="nextStep()"  @prevStep="prevStep()" />
               </div>
 
               <div
