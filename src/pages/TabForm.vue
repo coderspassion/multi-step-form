@@ -72,12 +72,18 @@ const totalSteps = ref([
 const isNext = ref(false);
 const current_step = ref(1);
 
+const changeNext = () => {
+    isNext.value = !isNext.value;
+    window.scrollTo(0, 0);
+}
 const nextStep = () => {
   current_step.value++;
+  window.scrollTo(0, 0);
 };
 
 const prevStep = () => {
   current_step.value--;
+  window.scrollTo(0, 0);
 };
 </script>
 <template>
@@ -135,7 +141,7 @@ const prevStep = () => {
                         :is="step.component"
                         @nextStep="nextStep()"
                         @prevStep="prevStep()"
-                        @back="isNext = false"
+                        @back="changeNext"
                       ></component>
                     </div>
                   </div>
@@ -144,12 +150,12 @@ const prevStep = () => {
             </div>
           </div>
 
-          <div v-else class="text-center mt-5 text-secondary">
+          <div v-else class="text-center my-5 text-secondary">
             <img src="../assets/logo.webp" alt="" />
             <h1 class="mt-3 ">The Best is Yet to Come</h1>
             <img src="../assets/leaf-divider-gray.webp" alt="">
             <hr />
-            <button class="btn btn-primary" @click="isNext = true">
+            <button class="btn btn-primary" @click="changeNext">
               Click here to begin
             </button>
             <h2 class="mt-5">
@@ -163,6 +169,7 @@ const prevStep = () => {
               Please bring your financial statements to your first visit with
               us.
             </h2>
+            
           </div>
         </div>
       </div>
