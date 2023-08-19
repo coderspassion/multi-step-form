@@ -41,7 +41,18 @@ export default function multiForm() {
     child_with_special_need:"",
     child_joint_owners:"",
     referred:"",
-    referred_by:""
+    referred_by:"",
+    //legal items
+    will:"",
+    will_last_updated:"",
+    poa_asstes:"",
+    poa_asstes_last_updated:"",
+    poa_health:"",
+    poa_health_last_updated:"",
+    living_will:"",
+    living_will_last_updated:"",
+    living_trust:"",
+    living_trust_last_updated:"",
   });
 
   const addChild = (index) => {

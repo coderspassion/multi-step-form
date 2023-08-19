@@ -103,7 +103,7 @@ const prevStep = () => {
                 role="tabpanel"
                 aria-labelledby="step-4-tab"
               >
-                <Step4/>
+                <Step4 @nextStep="nextStep()"  @prevStep="prevStep()"/>
               </div>
 
               <div
@@ -113,7 +113,7 @@ const prevStep = () => {
                 role="tabpanel"
                 aria-labelledby="step-5-tab"
               >
-                <Step5/>
+                <Step5 @nextStep="nextStep()"  @prevStep="prevStep()"/>
               </div>
 
               <div
@@ -123,7 +123,7 @@ const prevStep = () => {
                 role="tabpanel"
                 aria-labelledby="step-6-tab"
               >
-                <Step6/>
+                <Step6 @nextStep="nextStep()"  @prevStep="prevStep()"/>
               </div>
 
               <div
@@ -133,7 +133,7 @@ const prevStep = () => {
                 role="tabpanel"
                 aria-labelledby="step-7-tab"
               >
-                <Step7/>
+                <Step7 @nextStep="nextStep()"  @prevStep="prevStep()"/>
               </div>
 
               <div
@@ -143,7 +143,7 @@ const prevStep = () => {
                 role="tabpanel"
                 aria-labelledby="step-8-tab"
               >
-                <Step8/>
+                <Step8 @nextStep="nextStep()"  @prevStep="prevStep()"/>
               </div>
 
               <div
@@ -153,7 +153,7 @@ const prevStep = () => {
                 role="tabpanel"
                 aria-labelledby="step-9-tab"
               >
-                <Step9/>
+                <Step9 @nextStep="nextStep()"  @prevStep="prevStep()"/>
               </div>
 
               <div
@@ -163,7 +163,7 @@ const prevStep = () => {
                 role="tabpanel"
                 aria-labelledby="step-10-tab"
               >
-                <Step10/>
+                <Step10 @nextStep="nextStep()"  @prevStep="prevStep()"/>
               </div>
 
               <div
@@ -173,7 +173,7 @@ const prevStep = () => {
                 role="tabpanel"
                 aria-labelledby="step-11-tab"
               >
-                <Step11/>
+                <Step11 @nextStep="nextStep()"  @prevStep="prevStep()"/>
               </div>
 
               <div
@@ -183,7 +183,7 @@ const prevStep = () => {
                 role="tabpanel"
                 aria-labelledby="step-12-tab"
               >
-                <Step12/>
+                <Step12 @nextStep="nextStep()"  @prevStep="prevStep()"/>
               </div>
             </div>
           </div>
