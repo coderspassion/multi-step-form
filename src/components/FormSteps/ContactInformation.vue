@@ -212,7 +212,7 @@ const {mainForm} = multiForm();
     </div>
     <div class="card-footer">
       <div class="d-flex justify-content-end gap-1">
-        <button class="btn btn-secondary" @click="$emit('prevStep')">Previous</button>
+        <button class="btn btn-secondary" @click="$emit('back')">Previous</button>
         <button class="btn btn-primary" @click="$emit('nextStep')">Next</button>
       </div>
       
