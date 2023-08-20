@@ -3,8 +3,7 @@ import multiForm from '../../composables/multiForm';
 
 
 
-const {mainForm} = multiForm();
-
+const {mainForm, errors} = multiForm();
 </script>
 
 
@@ -18,6 +17,7 @@ const {mainForm} = multiForm();
         <div class="col-md-6 mb-3">
           <label class="form-label required">First Name </label>
           <input type="text" class="form-control" name="first_name" v-model="mainForm.first_name" />
+          <input type="text" v-model="errors.first_name">
         </div>
 
         <div class="col-md-6 mb-3">

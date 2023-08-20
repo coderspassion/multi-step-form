@@ -1,4 +1,4 @@
-import { reactive } from "vue";
+import { ref,reactive } from "vue";
 
 export default function multiForm() {
   const mainForm = reactive({
@@ -77,6 +77,46 @@ export default function multiForm() {
     annual_charity_contribution_amount:"",
     //life events
     life_events:[],
+    //assets
+    assets:[],
+    home_value:'',
+    home_balance_owed:'',
+    home_payment:'',
+    home_payoff_date:'',
+    autos:'',
+    autos_balance_owed:'',
+    autos_payment:'',
+    autos_payoff_date:'',
+    rental_properties:'',
+    rental_balance_owed:'',
+    rental_payment:'',
+    rental_payoff_date:'',
+    total_net_worth:'',
+    //additional information
+    when_you_want_to_retire:'',
+    after_tax_retirement_income_goal:'',
+    how_did_you_acquire_your_wealth:'',
+    who_is_your_financial_advisor:'',
+    who_do_you_want_taken_care_of:'',
+    //concerns
+    concerns:[],
+    //objectives
+    income_now:'1',
+    guarantees_provided:'1',
+    pass_to_beneficiaries:'1',
+    preserve_principal:'1',
+    income_later:'1',
+    create_a_tax_strategy:'1',
+    growth_potential:'1',
+    reduce_risk:'1',
+    other:false,
+    if_other:'',
+    //risk/goals
+    retirement_money:[],
+    risk_tolerance:[],
+    invesment_knowledge:[],
+    spouse_invesment_knowledge:[],
+
 
   });
 
@@ -94,9 +134,65 @@ export default function multiForm() {
     mainForm.childs.splice(index,1)
   }
 
+
+const isNext = ref(false);
+const current_step = ref(1);
+
+const changeNext = () => {
+  isNext.value = !isNext.value;
+  window.scrollTo(0, 0);
+};
+
+
+const errorsasd = ref({
+  first_name: "",
+    last_name: "",
+    dob: "",
+    organization: "",
+    occupation: "",
+    retirement_status: "",
+    primary_address: "",
+    maritual_status: "",
+
+});
+
+const errors = ref({});
+
+
+
+
+const validateForm = () => {
+  errors.value = {}
+  if(mainForm.first_name == ''){
+    errors.value.first_name = "First Name field is required"
+    console.log(errors.value)
+  }
+  
+}
+const nextStep = () => {
+
+  validateForm()
+  if(Object.keys(errors).length == 0){
+    current_step.value++;
+    window.scrollTo(0, 0);
+  }
+ 
+};
+
+const prevStep = () => {
+  current_step.value--;
+  window.scrollTo(0, 0);
+};
+
   return {
+    isNext,
     mainForm,
+    current_step,
+    errors,
     addChild,
-    removeChild
+    removeChild,
+    changeNext,
+    nextStep,
+    prevStep
   };
 }

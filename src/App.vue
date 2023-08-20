@@ -5,7 +5,7 @@ import TabForm from "./pages/TabForm.vue";
 
 <template>
   <div class="page">
-    <header class="navbar navbar-expand-md d-print-none">
+    <header class="navbar navbar-expand-md d-print-none sticky-top">
       <div class="container-xl">
         <h1
           class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3"
@@ -27,7 +27,7 @@ import TabForm from "./pages/TabForm.vue";
       <!-- <StepForm/> -->
 
       
-      <div class="container-xl">
+      <div class="container-xl mt-5">
         <hr class="my-5">
         <h4 class="text-center text-secondary my-5">
           We collect nonpublic personal information about you that is either
