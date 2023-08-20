@@ -53,6 +53,31 @@ export default function multiForm() {
     living_will_last_updated:"",
     living_trust:"",
     living_trust_last_updated:"",
+    //additional items
+    umbrella_policy:"",
+    long_term_care_insurance:"",
+    life_insurance:"",
+    death_benefit:"",
+    cash_value:"",
+    //cash flow
+    social_scurity:"$0.00",
+    survivor_options:"$0.00",
+    pension:"$0.00",
+    wages:"$0.00",
+    other_income:"$0.00",
+    retirement_plan_contributions:"$0.00",
+    monthly_expense:"",
+    is_monthly_income_sufficient:"",
+    additional_withdraw_from_portfolio:"",
+    additional_withdraw_amount:"",
+    tax_strategy_for_portfolio_withdraw:"",
+    foresee_any_large_purchase:"",
+    large_purchase_amount:"",
+    annual_charity_contribution:"",
+    annual_charity_contribution_amount:"",
+    //life events
+    life_events:[],
+
   });
 
   const addChild = (index) => {

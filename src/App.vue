@@ -1,4 +1,5 @@
 <script setup>
+import StepForm from "./pages/StepForm.vue";
 import TabForm from "./pages/TabForm.vue";
 </script>
 
@@ -23,6 +24,7 @@ import TabForm from "./pages/TabForm.vue";
     </header>
     <div class="page-wrapper">
       <TabForm />
+      <!-- <StepForm/> -->
 
       
       <div class="container-xl">

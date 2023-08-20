@@ -12,7 +12,7 @@ const { mainForm, addChild, removeChild } = multiForm();
     <div class="card-body">
       <div class="row">
         <div class="col-12">
-          <h5>Family Hierarchy</h5>
+          <h3>Family Hierarchy</h3>
           <hr class="mt-1 mb-3">
           <div class="row d-none d-md-flex">
             <div class="col-2">
