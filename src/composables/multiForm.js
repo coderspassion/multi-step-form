@@ -143,39 +143,9 @@ const changeNext = () => {
   window.scrollTo(0, 0);
 };
 
-
-const errorsasd = ref({
-  first_name: "",
-    last_name: "",
-    dob: "",
-    organization: "",
-    occupation: "",
-    retirement_status: "",
-    primary_address: "",
-    maritual_status: "",
-
-});
-
-const errors = ref({});
-
-
-
-
-const validateForm = () => {
-  errors.value = {}
-  if(mainForm.first_name == ''){
-    errors.value.first_name = "First Name field is required"
-    console.log(errors.value)
-  }
-  
-}
 const nextStep = () => {
-
-  validateForm()
-  if(Object.keys(errors).length == 0){
     current_step.value++;
     window.scrollTo(0, 0);
-  }
  
 };
 
@@ -188,7 +158,6 @@ const prevStep = () => {
     isNext,
     mainForm,
     current_step,
-    errors,
     addChild,
     removeChild,
     changeNext,
