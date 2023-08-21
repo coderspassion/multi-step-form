@@ -76,15 +76,11 @@ const { changeNext, prevStep, nextStep, isNext, current_step } = multiForm();
 <template>
   <div class="page-header d-print-none" v-if="isNext">
     <div class="container-xl">
-      <div class="row g-2 align-items-center">
-        <div class="col">
-          <h2 class="page-title">Financial Questionnaire</h2>
-        </div>
-      </div>
+      <h1 class="display-6 fw-bold my-0">Financial Questionnaire</h1>
     </div>
   </div>
 
-  <div class="page-body" v-if="isNext">
+  <div class="page-body min-vh-100" v-if="isNext">
     <div class="container-xl">
       <div class="row">
         <div class="col-12">

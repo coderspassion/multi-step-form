@@ -4,7 +4,7 @@ import TabForm from "./pages/TabForm.vue";
 </script>
 
 <template>
-  <div class="page">
+  <div class="page" >
     <header class="navbar navbar-expand-md d-print-none sticky-top">
       <div class="container-xl">
         <h1
@@ -13,10 +13,9 @@ import TabForm from "./pages/TabForm.vue";
           <a href=".">
             <img
               src="../src/assets/logo.webp"
-              width="110"
-              height="32"
-              alt="Tabler"
-              class="navbar-brand-image"
+              width="220"
+              height="52"
+              alt="Oak-Harvest-logo"
             />
           </a>
         </h1>
