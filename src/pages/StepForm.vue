@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import multiForm from "../composables/multiForm";
 import ContactInformation from "../components/FormSteps/ContactInformation.vue";
 import Family from "../components/FormSteps/Family.vue";
 import LegalItems from "../components/FormSteps/LegalItems.vue";
@@ -11,8 +11,10 @@ import AdditionalInformation from "../components/FormSteps/AdditionalInformation
 import Concerns from "../components/FormSteps/Concerns.vue";
 import Objectives from "../components/FormSteps/Objectives.vue";
 import RiskOrGoals from "../components/FormSteps/RiskOrGoals.vue";
+import bgImage from "@/assets/Oak-Hartvest-Financial-Group-Header-Image.webp";
 
-const totalSteps = ref([
+
+const totalSteps = [
   {
     title: "CONTACT INFORMATION",
     component: ContactInformation,
@@ -67,30 +69,10 @@ const totalSteps = ref([
     title: "RISK/GOALS",
     component: RiskOrGoals,
   },
-]);
+];
 
-const isNext = ref(false);
-const current_step = ref(1);
 
-const changeStep = (step) => {
-  if (step <= current_step.value) {
-    current_step.value = step;
-  }
-};
-
-const changeNext = () => {
-  isNext.value = !isNext.value;
-  window.scrollTo(0, 0);
-};
-const nextStep = () => {
-  current_step.value++;
-  window.scrollTo(0, 0);
-};
-
-const prevStep = () => {
-  current_step.value--;
-  window.scrollTo(0, 0);
-};
+const { changeNext, prevStep, nextStep, isNext, current_step } = multiForm();
 </script>
 
 <template>
@@ -103,10 +85,9 @@ const prevStep = () => {
       </div>
     </div>
   </div>
-  <div class="page-body">
+  <div class="page-body" v-if="isNext">
     <div class="container-xl">
       <div class="row">
-        <h4 class="card-title">Financial Questionnaire</h4>
         <div class="col-12">
           <div class="steps p-5">
             <a
@@ -139,4 +120,58 @@ const prevStep = () => {
       </div>
     </div>
   </div>
+  <div class="page-body mt-0" v-else>
+    <div
+      :style="{ 'background-image': 'url(' + bgImage + ')' }"
+      style="
+        background-repeat: no-repeat;
+        background-position: center -70px;
+        background-size: cover;
+      "
+    >
+      <div class="container-xl">
+        <div class="row position-relative floating-div-wrapper">
+          <div class="col-12 bg-glass">
+            <div class="text-center my-5 p-4">
+              <img src="../assets/logo.webp" alt="" width="170" />
+              <h1 class="mt-3 display-4 fw-bold">The Best is Yet to Come</h1>
+
+              <button class="btn btn-primary btn-lg" @click="changeNext">
+                Click here to begin
+              </button>
+              <h2 class="mt-5 display-6 fw-bold">
+                We are looking forward to getting together with you.
+              </h2>
+              <h2>
+                If you have any questions or require special assistance prior to
+                your visit, please call our office at 281-822-1350.
+              </h2>
+              <h1 class="text-primary">
+                Please bring your financial statements to your first visit with
+                us.
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
+
+<style scoped>
+.bg-glass {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(4, 32, 69, 0.14);
+  position: absolute;
+  top: 170px;
+  box-shadow: var(--tblr-shadow-card);
+  border-radius: 4px;
+}
+
+.floating-div-wrapper {
+  height: 500px;
+  margin-bottom: 10rem;
+}
+</style>

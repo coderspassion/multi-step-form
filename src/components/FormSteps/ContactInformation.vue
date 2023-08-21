@@ -71,7 +71,7 @@ const onSubmit = () => {
 
         <div class="col-md-6 mb-3">
           <label class="form-label required">Date of Birth </label>
-          <input class="form-control mb-2" type="date" name="dob" v-model="mainForm.dob"/>
+          <input class="form-control" type="date" name="dob" v-model="mainForm.dob"/>
           <span class="text-danger" v-if="errors.dob">{{ errors.dob }}</span>
         </div>
         <div class="col-md-4 mb-3">

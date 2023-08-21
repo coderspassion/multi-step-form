@@ -1,6 +1,5 @@
 <script setup>
 import multiForm from "../composables/multiForm";
-import { ref } from "vue";
 import ContactInformation from "../components/FormSteps/ContactInformation.vue";
 import Family from "../components/FormSteps/Family.vue";
 import LegalItems from "../components/FormSteps/LegalItems.vue";
