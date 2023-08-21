@@ -1,6 +1,46 @@
 <script setup>
+import { reactive, defineEmits, ref } from 'vue';
 import multiForm from '../../composables/multiForm';
 const {mainForm} = multiForm();
+const errors = ref({});
+const emit = defineEmits(['nextStep'])
+
+const onSubmit = () => {
+  errors.value={};
+  if(mainForm.first_name === ""){
+    errors.value.first_name = "First name field is required"
+  }
+  if(mainForm.last_name === ""){
+    errors.value.last_name = "Last name field is required"
+  }
+  if(mainForm.dob === ""){
+    errors.value.dob = "Date of birth field is required"
+  }
+
+  if(mainForm.organization === ""){
+    errors.value.organization = "This field is required"
+  }
+
+  if(mainForm.occupation === ""){
+    errors.value.occupation = "This field is required"
+  }
+
+  if(mainForm.retirement_status === ""){
+    errors.value.retirement_status = "This field is required"
+  }
+
+  if(mainForm.primary_address === ""){
+    errors.value.primary_address = "Primary address field is required"
+  }
+
+  if(mainForm.maritual_status === ""){
+    errors.value.maritual_status = "This field is required"
+  }
+
+  if(Object.keys(errors.value).length == 0){
+    emit('nextStep')
+  }
+}
 </script>
 
 
@@ -14,12 +54,14 @@ const {mainForm} = multiForm();
         <div class="col-md-6 mb-3">
           <label class="form-label required">First Name </label>
           <input type="text" class="form-control" name="first_name" v-model="mainForm.first_name" />
+          <span class="text-danger" v-if="errors.first_name">{{ errors.first_name }}</span>
     
         </div>
 
         <div class="col-md-6 mb-3">
           <label class="form-label required">Last Name </label>
           <input type="text" class="form-control" name="last_name" v-model="mainForm.last_name" />
+          <span class="text-danger" v-if="errors.last_name">{{ errors.last_name }}</span>
         </div>
 
         <div class="col-md-6 mb-3">
@@ -30,14 +72,17 @@ const {mainForm} = multiForm();
         <div class="col-md-6 mb-3">
           <label class="form-label required">Date of Birth </label>
           <input class="form-control mb-2" type="date" name="dob" v-model="mainForm.dob"/>
+          <span class="text-danger" v-if="errors.dob">{{ errors.dob }}</span>
         </div>
         <div class="col-md-4 mb-3">
           <label class="form-label required">Working At/Retired From </label>
           <input type="text" class="form-control" name="organization" v-model="mainForm.organization" />
+          <span class="text-danger" v-if="errors.organization">{{ errors.organization }}</span>
         </div>
         <div class="col-md-4 mb-3">
           <label class="form-label required">Current/Former Occupation </label>
           <input type="text" class="form-control" name="occupation" v-model="mainForm.occupation" />
+          <span class="text-danger" v-if="errors.occupation">{{ errors.occupation }}</span>
         </div>
 
         <div class="col-md-4 mb-3">
@@ -56,6 +101,7 @@ const {mainForm} = multiForm();
               <span class="form-check-label">Semi</span>
             </label>
           </div>
+          <span class="text-danger" v-if="errors.retirement_status">{{ errors.retirement_status }}</span>
         </div>
 
         <div class="col-md-6 mb-3">
@@ -76,6 +122,7 @@ const {mainForm} = multiForm();
         <div class="col-md-6 mb-3">
           <label class="form-label required">Primary Address</label>
           <input type="text" class="form-control" name="primary_address" v-model="mainForm.primary_address"/>
+          <span class="text-danger" v-if="errors.primary_address">{{ errors.primary_address }}</span>
         </div>
 
         <div class="col-md-6 mb-3">
@@ -122,6 +169,7 @@ const {mainForm} = multiForm();
               <span class="form-check-label">Married</span>
             </label>
           </div>
+          <span class="text-danger" v-if="errors.maritual_status">{{ errors.maritual_status }}</span>
         </div>
 
         <div class="mt-3" v-if="mainForm.maritual_status == 'married'">
@@ -210,7 +258,7 @@ const {mainForm} = multiForm();
     <div class="card-footer">
       <div class="d-flex justify-content-end gap-1">
         <button class="btn btn-secondary" @click="$emit('back')">Previous</button>
-        <button class="btn btn-primary" @click="$emit('nextStep')">Next</button>
+        <button class="btn btn-primary" @click="onSubmit">Next</button>
       </div>
       
     </div>
