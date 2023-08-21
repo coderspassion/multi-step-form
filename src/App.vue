@@ -25,5 +25,16 @@ import TabForm from "./pages/TabForm.vue";
       <TabForm />
       <!-- <StepForm/> -->
     </div>
+
+    <div class="container-xl mt-5">
+        <hr class="my-5">
+        <h4 class="text-center text-secondary my-5">
+          We collect nonpublic personal information about you that is either
+          provided by you or obtained by us with your authorization. The firm
+          does not disclose non-public personal information about our customers
+          to anyone, except in limited circumstances stated in our Privacy
+          Policy
+        </h4>
+      </div>
   </div>
 </template>
