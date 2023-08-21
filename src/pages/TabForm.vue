@@ -106,7 +106,7 @@ const { changeNext, prevStep, nextStep, isNext, current_step } = multiForm();
                     :aria-selected="[current_step == index + 1 ? true : false]"
                     @click="current_step = index + 1"
                   >
-                    {{ step.title }}
+                   {{ index+1 }} . {{ step.title }}
                   </button>
                 </div>
                 <div class="tab-content col-md-9" id="v-pills-tabContent">
