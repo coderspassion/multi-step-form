@@ -1,6 +1,74 @@
 import { ref, reactive } from "vue";
+import ContactInformation from "../components/FormSteps/ContactInformation.vue";
+import Family from "../components/FormSteps/Family.vue";
+import LegalItems from "../components/FormSteps/LegalItems.vue";
+import AdditionalItems from "../components/FormSteps/AdditionalItems.vue";
+import CashFlow from "../components/FormSteps/CashFlow.vue";
+import LifeEvents from "../components/FormSteps/LifeEvents.vue";
+import Assets from "../components/FormSteps/Assets.vue";
+import AdditionalInformation from "../components/FormSteps/AdditionalInformation.vue";
+import Concerns from "../components/FormSteps/Concerns.vue";
+import Objectives from "../components/FormSteps/Objectives.vue";
+import RiskOrGoals from "../components/FormSteps/RiskOrGoals.vue";
 
 export default function multiForm() {
+
+  const totalSteps = [
+    {
+      title: "CONTACT INFORMATION",
+      component: ContactInformation,
+    },
+  
+    {
+      title: "FAMILY",
+      component: Family,
+    },
+  
+    {
+      title: "LEGAL ITEMS",
+      component: LegalItems,
+    },
+  
+    {
+      title: "ADD'l ITEMS",
+      component: AdditionalItems,
+    },
+  
+    {
+      title: "CASH FLOW",
+      component: CashFlow,
+    },
+  
+    {
+      title: "LIFE EVENTS",
+      component: LifeEvents,
+    },
+  
+    {
+      title: "ASSETS",
+      component: Assets,
+    },
+  
+    {
+      title: "ADD'L INFORMATION",
+      component: AdditionalInformation,
+    },
+  
+    {
+      title: "CONCERNS",
+      component: Concerns,
+    },
+  
+    {
+      title: "OBJECTIVES",
+      component: Objectives,
+    },
+  
+    {
+      title: "RISK/GOALS",
+      component: RiskOrGoals,
+    },
+  ];
   const mainForm = reactive({
     //contact_information
     first_name: "",
@@ -80,6 +148,7 @@ export default function multiForm() {
     isNext,
     mainForm,
     current_step,
+    totalSteps,
     addChild,
     removeChild,
     changeNext,

@@ -1,77 +1,10 @@
 <script setup>
 import multiForm from "../composables/multiForm";
-import ContactInformation from "../components/FormSteps/ContactInformation.vue";
-import Family from "../components/FormSteps/Family.vue";
-import LegalItems from "../components/FormSteps/LegalItems.vue";
-import AdditionalItems from "../components/FormSteps/AdditionalItems.vue";
-import CashFlow from "../components/FormSteps/CashFlow.vue";
-import LifeEvents from "../components/FormSteps/LifeEvents.vue";
-import Assets from "../components/FormSteps/Assets.vue";
-import AdditionalInformation from "../components/FormSteps/AdditionalInformation.vue";
-import Concerns from "../components/FormSteps/Concerns.vue";
-import Objectives from "../components/FormSteps/Objectives.vue";
-import RiskOrGoals from "../components/FormSteps/RiskOrGoals.vue";
 import bgImage from "@/assets/Oak-Hartvest-Financial-Group-Header-Image.webp";
 
-const totalSteps = [
-  {
-    title: "CONTACT INFORMATION",
-    component: ContactInformation,
-  },
-
-  {
-    title: "FAMILY",
-    component: Family,
-  },
-
-  {
-    title: "LEGAL ITEMS",
-    component: LegalItems,
-  },
-
-  {
-    title: "ADD'l ITEMS",
-    component: AdditionalItems,
-  },
-
-  {
-    title: "CASH FLOW",
-    component: CashFlow,
-  },
-
-  {
-    title: "LIFE EVENTS",
-    component: LifeEvents,
-  },
-
-  {
-    title: "ASSETS",
-    component: Assets,
-  },
-
-  {
-    title: "ADD'L INFORMATION",
-    component: AdditionalInformation,
-  },
-
-  {
-    title: "CONCERNS",
-    component: Concerns,
-  },
-
-  {
-    title: "OBJECTIVES",
-    component: Objectives,
-  },
-
-  {
-    title: "RISK/GOALS",
-    component: RiskOrGoals,
-  },
-];
-
-const { changeNext, prevStep, nextStep, isNext, current_step } = multiForm();
+const { changeNext, prevStep, nextStep,totalSteps, isNext, current_step } = multiForm();
 </script>
+
 <template>
   <div class="page-header d-print-none" v-if="isNext">
     <div class="container-xl">
