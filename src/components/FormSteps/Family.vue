@@ -180,8 +180,6 @@ const { mainForm, addChild, removeChild } = multiForm();
                 v-model="mainForm.referred_by"
               />
         </div>
-
-
       </div>
     </div>
 
@@ -190,7 +188,6 @@ const { mainForm, addChild, removeChild } = multiForm();
         <button class="btn btn-secondary" @click="$emit('prevStep')">Previous</button>
         <button class="btn btn-primary" @click="$emit('nextStep')">Next</button>
       </div>
-      
     </div>
   </div>
 </template>

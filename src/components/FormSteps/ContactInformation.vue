@@ -1,11 +1,10 @@
 <script setup>
+
 import multiForm from '../../composables/multiForm';
 
-
-
 const {mainForm, errors} = multiForm();
-</script>
 
+</script>
 
 <template>
   <div class="card">
@@ -215,7 +214,6 @@ const {mainForm, errors} = multiForm();
         <button class="btn btn-secondary" @click="$emit('back')">Previous</button>
         <button class="btn btn-primary" @click="$emit('nextStep')">Next</button>
       </div>
-      
     </div>
   </div>
 </template>
