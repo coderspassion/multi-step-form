@@ -25,8 +25,6 @@ import TabForm from "./pages/TabForm.vue";
     <div class="page-wrapper">
       <TabForm />
       <!-- <StepForm/> -->
-
-      
       <div class="container-xl mt-5">
         <hr class="my-5">
         <h4 class="text-center text-secondary my-5">
