@@ -296,17 +296,7 @@ const { mainForm } = multiForm();
             v-model="mainForm.annual_charity_contribution_amount"
           />
         </div>
-
-        
-
-
-
-
       </div>
-
-
-
-
     </div>
     <div class="card-footer">
       <div class="d-flex justify-content-end gap-1">

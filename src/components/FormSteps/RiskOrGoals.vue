@@ -40,9 +40,9 @@ const totalRisks = [
           <div class="col-12 mb-3" v-for="risk in totalRisks" :key="risk">
             <label class="form-label">{{ risk.label }}</label>
             <label class="form-check form-check-inline" v-for="option in risk.options">
-                                <input class="form-check-input" type="checkbox" :value="option" v-model="risk.modelValue">
-                                <span class="form-check-label">{{ option }}</span>
-                              </label>
+              <input class="form-check-input" type="checkbox" :value="option" v-model="risk.modelValue">
+              <span class="form-check-label">{{ option }}</span>
+            </label>
           </div>
         </div>
       </div>
